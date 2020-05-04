@@ -1,0 +1,33 @@
+security:
+  oauth2:
+    client:
+      clientId: account-service
+      clientSecret: password
+      accessTokenUri: http://auth-service:5000/uaa/oauth/token
+      grant-type: client_credentials
+      scope: server
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://account-postgres:5432/postgres_acc
+    username: postgres
+    password: password
+
+server:
+  servlet:
+    context-path: /accounts
+  port: 6000
+
+feign:
+  hystrix:
+    enabled: true
