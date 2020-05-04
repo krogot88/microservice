@@ -2,7 +2,7 @@ security:
   oauth2:
     client:
       clientId: account-service
-      clientSecret: password
+      clientSecret: ${ACCOUNT_SERVICE_PASSWORD}
       accessTokenUri: http://auth-service:5000/uaa/oauth/token
       grant-type: client_credentials
       scope: server
@@ -19,9 +19,9 @@ spring:
       ddl-auto: validate
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://account-postgres:5432/postgres_acc
+    url: jdbc:postgresql://account-postgres:5432/${ACCOUNT_POSTGRES_DB_NAME}
     username: postgres
-    password: password
+    password: ${POSTGRESDB_PASSWORD}
 
 server:
   servlet:
