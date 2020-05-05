@@ -28,4 +28,4 @@ spring:
 
 
 greeting:
-  message: test two
+  message: test three
