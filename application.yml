@@ -29,4 +29,4 @@ spring:
 reloadConfigCron: 0 0/5 * * * *
 
 greeting:
-  message: test 18
+  message: test 19
